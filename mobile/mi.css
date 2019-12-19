@@ -1,0 +1,226 @@
+@font-face {
+  font-family: 'iconfont';
+  src: url('iconfont.eot');
+  src: url('iconfont.eot?#iefix') format('embedded-opentype'),
+      url('iconfont.woff2') format('woff2'),
+      url('iconfont.woff') format('woff'),
+      url('iconfont.ttf') format('truetype'),
+      url('iconfont.svg#iconfont') format('svg');
+}
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+/* html {
+    font-size: calc(10000vw / 500);
+} */
+
+body{
+  overflow-y: scroll;
+  font:14px/1.5 Helvetica Neue,Helvetica,Arial,Microsoft Yahei,Hiragino Sans GB,Heiti SC,WenQuanYi Micro Hei,sans-serif
+}
+*{
+ margin:0;
+  padding:0;
+}
+ul{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+}
+em{
+  font-style: normal;
+}
+table{
+  border-collapse: collapse;
+}
+th,td{
+  padding: 0;
+}
+
+
+
+
+.container{
+    position: flex;
+    top:0;
+    right: 0;
+    left: 0;
+}
+
+
+.toptop a .top1 img{
+    width: 100%;
+    height: auto;
+}
+.top-header{
+    height: 58.33px;
+    width: 100%;
+    background-color: #F2F2F2;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.logo-wrap{
+    width: 41.66px;
+    height: 24.42px;
+}
+.logo-wrap img{
+    width: 80%;
+    height: 21.92px;
+}
+.search-wrap {
+    width: 361.14px;
+    height:43.66px;
+}
+.srch-txt{
+    width: 361.14px;
+    height:43.66px;
+    color: rgba(0, 0, 0, 0.1);
+    text-align: left;
+    background-color: #fff;
+    font-size: .3rem;
+}
+.masage-wrap .APP span img{
+    width: .4rem;
+    height: .4rem;
+
+}
+
+.list{
+    width: 100%;
+    height: 40px;
+    position: relative;
+    /* overflow: hidden; */
+    background-color: rgb(242, 242, 242);
+}
+#tui {
+    /* box-sizing: border-box; */
+    color:rgb(237, 91 , 0);
+    /* border: rgb(237, 91 , 0) 10px solid; */
+}
+
+.list div{
+    /* position: absolute;
+    top: 50%; */
+    line-height: 40px;
+    display: inline-block;
+    padding: 0 0.23rem;
+    font-size: .26rem;
+    color: rgb(116, 116, 116);
+    background-color: rgb(242, 242, 242);
+}
+.hero img{
+    width: 100%;
+    height: 250px;
+    /* opacity: 0.1; */
+}
+.midone{
+    width: 100%;
+    height: 1.52rem;
+}
+.midone div{
+    display: inline;
+    margin: 0;
+}
+.midone a img{
+
+    width: 1.39rem;
+    height: 1.52rem;
+}
+
+.flex{
+    height: 5.08rem;
+    width: 7.2rem;
+    display: inline-block;
+}
+.flex .big1 {
+    display: inline;
+}
+.flex .big1 a img{
+    width: 3.58rem;
+    height: 5.08;
+}
+.flex .big2 a img{
+    width: 3.58rem;
+    height: 2.52rem;
+}
+.flex .big3 a img{
+    width: 3.58rem;
+    height: 2.52rem;
+}
+
+
+
+
+
+
+
+footer{
+    z-index: 9999;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    width: 100%;
+
+}
+.last{
+    display: flex;
+    justify-content: space-around;
+}
+.last-last a div img{
+    display: block;
+    width: .4rem;
+    height: .4rem;
+    margin: 0 auto .1rem;
+}
+.last-last a span{
+    color: #999;
+}
+#eg{
+    color: #ff6700;
+}
+/* footer{
+    z-index: 9999;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    width: 100%;
+    height: 52px;
+
+}
+.foot{
+    width: 100%;
+    height: 52px;
+    border: 1px red solid;
+
+}
+.foot f1{
+
+}
+
+.foot div a{
+    display: inline-block;
+    width: 121.18px;
+    height: 52.21px;
+    color: #999;
+    /* border: solid 1px red;
+}
+.f1 a :first-child{
+
+
+}
+.foot a :last-child{
+    display: inline-block;
+    width: 1.5rem;
+    font-size: .22rem;
+    text-align: center;
+} */
