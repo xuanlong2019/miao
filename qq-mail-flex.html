@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .wrap {
+            display: flex;
+            flex-wrap: wrap;
+
+        }
+
+        .top {
+            width: 100%;
+            height: 100px;
+            background-color: red;
+        }
+
+        .aside {
+            width: 100px;
+            height: 1000px;
+            background-color: blue;
+        }
+
+        .main {
+            height: 1000px;
+            width: calc(100% - 100px);
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="top">顶</div>
+        <div class="aside">侧边栏</div>
+        <div class="main">内容</div>
+    </div>
+
+</body>
+
+</html>
