@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+
+        }
+
+        hero {
+            height: 100%;
+            width: 100%;
+            position: relative;
+        }
+
+        .top {
+            position: absolute;
+            top: 0;
+            height: 100px;
+            width: 100%;
+            background-color: red;
+        }
+
+        .aside {
+            position: absolute;
+            top: 100px;
+            left: 0;
+            height: 1000px;
+            width: 100px;
+            background-color: blue;
+        }
+
+        .main {
+            position: absolute;
+            top: 100px;
+            left: 100px;
+            height: 1000px;
+            width: 100%;
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="hero">
+        <div class="top">顶</div>
+        <div class="aside">侧边栏</div>
+        <div class="main">内容</div>
+    </div>
+
+</body>
+
+</html>
