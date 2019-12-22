@@ -67,6 +67,44 @@ color: gray;
 .topbar-list span{
   margin: 0 2px;
 }
+.twoMa{
+  position: relative;
+}
+
+.twoMa .qr-img{
+  /* display: inline-block; */
+  position: absolute;
+  top:28px;
+  left: -33px;
+  height:160px;
+  width: 124px;
+  background-color:#fff;
+  /* border: 1px solid black; */
+  box-shadow: 0 1px 5px #aaa;
+  z-index:99999;
+  text-align: center;
+  /* display:none ; */
+  visibility: hidden;
+}
+.twoMa:hover .qr-img{
+  /* display: block; */
+  visibility: visible;
+}
+.twoMa .qr-img img{
+  margin-top: 20px;
+  width: 90px;
+  height: 90px;
+}
+.twoMa  .qr-img p{
+
+  font-size: 14px;
+  color: #333;
+
+}
+
+
+
+
 .topbar-info{
   float: right;
 }
