@@ -330,11 +330,10 @@
             }
 </script>
 <script type="XL" id="ch0104/18">
-            var a = Number(prompt());
-            var b = Number(prompt());
-            var c = Number(prompt());
+            var x = Number(prompt());
+            var y = Number(prompt());
 
-            if(a+b>c && a+c>b && b+c>a){
+            if(x>=-1 && x<=1 && y>=-1 &&y<=1){
                 console.log("yes")
             }else{
                 console.log("no")
@@ -344,36 +343,26 @@
 <script type="XL" id="ch0104/19">
             var a = Number(prompt());
             var b = Number(prompt());
-            var c = Number(prompt());
+            var c = String(prompt());
 
-            if(a+b>c && a+c>b && b+c>a){
-                console.log("yes")
-            }else{
-                console.log("no")
+            if(c!='+'|| c!= '-'||c !='*' ||c !='/'){
+                console.log("Invalid operator!")
+            }else if(b==0 && c=='/'){
+                console("Divided by zero!")
+            }else if(){
+
             }
 
 </script>
 <script type="XL" id="ch0104/20">
-            var a = Number(prompt());
-            var b = Number(prompt());
-            var c = Number(prompt());
 
-            if(a+b>c && a+c>b && b+c>a){
-                console.log("yes")
-            }else{
-                console.log("no")
-            }
 
 </script>
 <script type="XL" id="ch0104/21">
-            var a = Number(prompt());
-            var b = Number(prompt());
-            var c = Number(prompt());
+            var n = Number(prompt());
+            var x = Number(prompt());
+            var y = Number(prompt());
 
-            if(a+b>c && a+c>b && b+c>a){
-                console.log("yes")
-            }else{
-                console.log("no")
-            }
+            console.log(Math.floor(n-y/x))
 
 </script>
