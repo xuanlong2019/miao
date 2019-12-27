@@ -9,7 +9,7 @@
     </script>
 <script type="XL" id="ch0103/03">
         var a = Number(prompt()),b = Number(prompt()),c = Number(prompt());
-        console.log(Math.round((a+b)/c))
+        console.log(Math.floor((a+b)/c))
     </script>
 <script type="XL" id="ch0103/04">
             var a = Number(prompt()),b = Number(prompt());
@@ -26,7 +26,7 @@
 <script type="XL" id="ch0103/06">
             var a = Number(prompt());
             var b = Number(prompt());
-            var c = a/b
+            var c = b/a
             console.log(c.toFixed(3)+"%");
     </script>
 <script type="XL" id="ch0103/07">
@@ -70,11 +70,14 @@
     </script>
 <script type="XL" id="ch0103/13">
             var a = Number(prompt());
-            var b = a%100
-            var c = a%10
+            var b = Math.floor(a/100);
+            var c = Math.floor((a-b*100)/10);
             var d = a-b*100-c*10
             var n =d*100+c*10+b
             console.log(n);
+            console.log(b);
+            console.log(c);
+            console.log(d);
     </script>
 <script type="XL" id="ch0103/14">
             var h = Number(prompt());
