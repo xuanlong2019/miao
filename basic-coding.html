@@ -102,10 +102,10 @@
     </script>
 <script type="XL" id="ch0103/17">
                 var x1 = Number(prompt());
-                var x2 = Number(prompt());
-                var x3 = Number(prompt());
                 var y1 = Number(prompt());
+                var x2 = Number(prompt());
                 var y2 = Number(prompt());
+                var x3 = Number(prompt());
                 var y3 = Number(prompt());
 
                 var a1 =x2-x1;
@@ -345,17 +345,35 @@
             var b = Number(prompt());
             var c = String(prompt());
 
-            if(c!='+'|| c!= '-'||c !='*' ||c !='/'){
+            if(c !== '+' && c !== '-' && c !== '*' && c !== '/'){
                 console.log("Invalid operator!")
             }else if(b==0 && c=='/'){
                 console("Divided by zero!")
-            }else if(){
-
+            }else if(c=='+'){
+                console.log(a+b)
+            }else if(c=='-'){
+                console.log(a-b)
+            }else if(c=='*'){
+                console.log(a*b)
+            }else if(c=='/'){
+                console.log(a/b)
             }
 
 </script>
 <script type="XL" id="ch0104/20">
+            var a = Number(prompt());
+            var b = Number(prompt());
+            var c = String(prompt());
 
+            var x1 = (-b + sqrt(b*b-4*a*c))/(2*a);
+            var x2 = (-b - sqrt(b*b-4*a*c))/(2*a);
+            if(b*b == 4*a*c){
+                console.log("x1=x2"+x1)
+            }else if(b*b>4*a*c){
+                console.log("x1="+x1);
+            }else if(b*b<4*a*c){
+                console.log("x1="+x1)
+            }
 
 </script>
 <script type="XL" id="ch0104/21">
