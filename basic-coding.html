@@ -115,23 +115,28 @@
                 var a1 =x2-x1;
                 var b1 =y2-y1;
                 var c1=a1*a1+b1*b1;
-                var d1=Math.sqrt(c1);
+                var d1=Math.sqrt(c1);4
 
                 var a2 =x3-x1;
                 var b2 =y3-y1;
                 var c2=a2*a2+b2*b2;
-                var d2=Math.sqrt(c2);
+                var d2=Math.sqrt(c2);3
 
                 var a3 =x3-x2;
                 var b3 =y3-y2;
                 var c3=a3*a3+b3*b3;
                 var d3=Math.sqrt(c3);
 
-                var p =(a1+b1+c1)/2;
+                var p =(d1+d2+d3)/2;
 
-                var z =p*(p-d1)*(p-d2)*(p-d3)
+                var z =Math.abs(p*(p-d1)*(p-d2)*(p-d3))
                 var S =Math.sqrt(z);
                 console.log(S);
+                console.log(d1);
+                console.log(d2);
+                console.log(d3);
+                console.log(p);
+                console.log(z);
     </script>
 <script type="XL" id="ch0103/18">
                 var a1 = Number(prompt());
