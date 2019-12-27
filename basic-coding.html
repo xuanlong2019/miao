@@ -365,41 +365,50 @@
             var b = Number(prompt());
             var c = String(prompt());
 
-            var x1 = (-b + sqrt(b*b-4*a*c))/(2*a);
-            var x2 = (-b - sqrt(b*b-4*a*c))/(2*a);
+            var x1 = (-b + Math.sqrt(b*b-4*a*c))/(2*a);
+            var x2 = (-b - Math.sqrt(b*b-4*a*c))/(2*a);
             if(b*b == 4*a*c){
-                console.log("x1=x2"+x1)
+                console.log("x1=x2="+ (-b + Math.sqrt(b * b - 4 * a * c))/(2 * a).toFixed(5))
             }else if(b*b>4*a*c){
-                console.log("x1="+x1);
+                console.log("x1=" + (-b + Math.sqrt(b * b - 4 * a * c))/(2 * a).toFixed(5));
+                console.log("x2=" + (-b - Math.sqrt(b * b- 4 * a * c))/(2*a) )
             }else if(b*b<4*a*c){
-                console.log("x1="+x1)
+                console.log("x1="+ )
             }
 
 </script>
-<script type="XL" id="ch0104/21">
-            var n = Number(prompt());
-            var x = Number(prompt());
-            var y = Number(prompt());
+var a = +prompt();
+var b = +prompt();
+var c = +prompt();
+var x1, x2;
+if(b * b == 4 * a * c){
+console.log("x1=x2=" + (-b + Math.sqrt(b * b - 4 * a * c))/(2 * a).toFixed(5));
+}else if(b * b > 4 * a * c){
+x1 = (-b + Math.sqrt(b * b - 4 * a * c))/(2 * a).toFixed(5);
+x2 = (-b - Math.sqrt(b * b - 4 * a * c))/(2 * a).toFixed(5);
+if(x1 > x2){
+console.log("x1=" + x1 + ";" + "x2=" + x2);
+}else{
+console.log("x1=" + x2 + ";" + "x2=" + x1)
+}
+}else if(b * b < 4 * a * c){ console.log("x1=" + (-b / (2 * a)).toFixed(5) + " +" + (Math.sqrt(4 * a * c - b * b)/(2 *
+    a)).toFixed(5) + "i" + ";" + "x2=" + (-b / (2 * a)).toFixed(5) + "-" + (Math.sqrt(4 * a * c - b * b) /(2 *
+    a)).toFixed(5) + "i" ); } </script> <script type="XL" id="ch0104/21">
+    var n = Number(prompt());
+    var x = Number(prompt());
+    var y = Number(prompt());
 
-            console.log(Math.floor(n-y/x))
+    console.log(Math.floor(n-y/x))
 
 </script>
-<script type="XL" id="ch0105/01">
-            var n = Number(prompt());
 
-            for(var i=0;i<n;i++){
-                var a = Number(prompt());
-                a+=a;
-            }
-            console.log();
-</script>
 <script type="XL" id="ch0105/01">
             var n = Number(prompt());
             var a=0;
             var b=0;
             for(var i=0;i<n;i++){
-                b = Number(prompt());
-                a = a+b;
+                b = +Number(prompt());
+                a += b;
             }
             var c=a/n
             console.log(c.toFixed(2));
