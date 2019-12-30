@@ -668,8 +668,8 @@
             if(n == 0) return m;
             return 2*foo(n) + sum(n-1);
             }
-            console.log(sum(9));
-            console.log(foo(10));
+            console.log(sum(9).toFixed(4));
+            console.log(foo(10).toFixed(7));
 
 
 
@@ -695,4 +695,28 @@
                 }
             }
             console.log("End")
+</script>
+<script type="XL" id="ch0105/22">
+            var Sum=0;
+            var MomSum=0;
+            var a=1;
+
+
+            for(var i=0;i<12;i++){
+                var N = Number(prompt());
+                Sum=300+Sum-N;
+                if(Sum<0){
+                    a=0;
+                    var cur=i;
+                }
+                while(Sum>=100){
+                    Sum=Sum-100;
+                    MomSum+=100;
+                }
+            }
+            if(a==1){
+                console.log(1.2*MomSum+Sum)
+            }else{
+                console.log(-1*cur);
+            }
 </script>
