@@ -658,57 +658,24 @@
 </script>
 
 <script type="XL" id="ch0105/20">
-           var m = Number(prompt());
+            var m = Number(prompt());
 
             function foo(n){
                 if(n== 0) return m;
                 return foo(n-1)*0.5;
             }
-            console.log(foo(10));
-
             function sum(n){
             if(n == 0) return m;
             return 2*foo(n) + sum(n-1);
             }
+            console.log(sum(9));
+            console.log(foo(10));
 
-            console.log(sum(10));
 
 
 </script>
 <script type="XL" id="ch0105/21">
             var N = Number(prompt());
-
-
-            if(N==1){
-                console.log("End")
-            }else{
-                while(N!=1){
-                if(N%2==0){
-                    console.log(N+"/2="+N/2)
-                    N=N/2
-
-                }else{
-                    console.log(N+"*3+1="+(N*3+1))
-                    N=N*3+1
-
-                    }
-
-                }
-            }
-            console.log("End")
-</script>
-
-
-<script type="XL" id="ch0105/22">
-            for(var i=0;i<12;i++){
-                var N = Number(prompt());
-
-
-
-
-
-            }
-
 
 
             if(N==1){
