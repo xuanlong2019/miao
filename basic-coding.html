@@ -608,7 +608,7 @@
                     break;
                 }
             }
-            if(year<=20){
+            if(Year<=20){
                 console.log(Year);
             }else{
                 console.log("Impossible")
@@ -855,8 +855,11 @@
             }
             for(var i=0;i<N;i++){
                 if(arr[i]<0){
-                    console.log(-1*arr[i])
-                    console.log(",")
+                    if(i!= 0){
+                        console.log(","+ -1*arr[i])
+                    }else{
+                        console.log(-1*arr[i])
+                    }
                 }
             }
 
@@ -906,4 +909,24 @@
                 bigSum= bigSum+1/sum
             }
             console.log((1+bigSum).toFixed(10))
+</script>
+<script type="XL" id="ch0105/36">
+            var x = Number(prompt());
+            var n = Number(prompt());
+            var nub=0
+            var sum=0;
+            for(var i=0;i<=n;i++){
+                nub=Math.pow(x,i)
+                sum=sum+nub
+            }
+            console.log(sum.toFixed(2))
+</script>
+<script type="XL" id="ch0105/37">
+            var M = Number(prompt());
+            var N = Number(prompt());
+            var X = Number(prompt());
+
+            X--
+            M++
+
 </script>
