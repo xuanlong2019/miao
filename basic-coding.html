@@ -372,20 +372,22 @@
             var a = Number(prompt());
             var b = Number(prompt());
             var c = String(prompt());
-
-            var x1 = (-b + Math.sqrt(b*b-4*a*c))/(2*a);
-            var x2 = (-b - Math.sqrt(b*b-4*a*c))/(2*a);
-
+            var x1, x2
+            var q , p
             if(b*b == 4*a*c){
                 console.log("x1=x2="+ (-b + Math.sqrt(b * b - 4 * a * c))/(2 * a).toFixed(5))
             }else if(b*b>4*a*c){
-                console.log("x1=" + (-b + Math.sqrt(b * b - 4 * a * c))/(2 * a).toFixed(5));
-                console.log("x2=" + (-b - Math.sqrt(b * b- 4 * a * c))/(2*a) )
+                x1=(-b + Math.sqrt(b * b - 4 * a * c))/(2 * a)
+                x2=(-b - Math.sqrt(b * b - 4 * a * c))/(2 * a)
+                console.log("x1=" + x1.toFixed(5)+ ";x2" + x2.toFixed(5))
             }else if(b*b<4*a*c){
-                console.log("x1="+ )
+                q=(-b / (2 * a)).toFixed(5);
+                p=(Math.sqrt(4 * a * c - b * b) / (2 * a)).toFixed(5);
+                console.log("x1="+ q + "+" +p +"i;x2=" +q + "-" +p +"i")
             }
 </script>
-</script>
+
+
 <script type="XL" id="ch0104/21">
     var n = Number(prompt());
     var x = Number(prompt());
@@ -853,16 +855,15 @@
                     }
                 }
             }
+            var arr1 = new Array();
+            var q=0;
             for(var i=0;i<N;i++){
                 if(arr[i]<0){
-                    if(i!= 0){
-                        console.log(","+ -1*arr[i])
-                    }else{
-                        console.log(-1*arr[i])
-                    }
+                    arr1[q]=arr[i] * -1
+                    q++
                 }
             }
-
+            alert(arr1)
 </script>
 <script type="XL" id="ch0105/32">
             var N = Number(prompt());
@@ -922,11 +923,132 @@
             console.log(sum.toFixed(2))
 </script>
 <script type="XL" id="ch0105/37">
-            var M = Number(prompt());
-            var N = Number(prompt());
+            var T = Number(prompt());
+            var Z = Number(prompt());
             var X = Number(prompt());
+            debugger
+            var cur=T;
+            T=0;
+            while(X>0){
+                if(T>=cur){
+                T=0;
+                Z = Z+ Math.floor(cur/Z)
+                }else if(T<cur){
+                X--
+                T=T+Z
+                    if(T>cur){
+                        T=cur
+                    }
+                }
+            }
+            console.log(Z)
+</script>
+<script type="XL" id="ch0105/38">
+            var x = Number(prompt());
+            var n = Number(prompt());
+            var nub=0
+            var sum=0;
+            for(var i=0;i<=n;i++){
+                nub=Math.pow(x,i)
+                sum=sum+nub
+            }
+            console.log(sum.toFixed(2))
+</script>
+<script type="XL" id="ch0105/39">
 
-            X--
-            M++
+            var n = Number(prompt());
+            var sum=0;
+            for(var i=1;i<=n;i++){
+                if(i%7==0 || Math.floor(i/10) ==7 || i%10==7){
+                    i=i;
+                }else{
+                    sum += i*i;
+                }
+            }
+            console.log(sum)
+</script>
+<script type="XL" id="ch0105/40">
+
+            var n = Number(prompt());
+            var sum=0;
+
+            for(var i=1;i<=n;i++){
+                if( Math.floor(i/10) ==1 || i%10==1){
+                    if(Math.floor(i/10) ==1 && i%10==1){
+                        sum+=2
+                    }else{
+                        sum++
+                    }
+                }
+            }
+            console.log(sum)
+</script>
+<script type="XL" id="ch0105/41">
+            var L = Number(prompt());
+            var R = Number(prompt());
+            var sum=0;
+            for(var i=L;i<=R;i++){
+               for(var k=i;k>0;k=k/100){
+                  if(k%10==1){
+                    sum++
+                  }
+               }
+            }
+            console.log(sum)
+</script>
+<script type="XL" id="ch0105/42">
+            var d = Number(prompt());
+            var h = Number(prompt());
+            var z = String(prompt());
+            var flag = Number(prompt());
+            var str =""
+
+            if(flag==1){
+                for(var i=0;i<h;i++){
+                    for(var k=0;k<d;k++){
+                        str+=z
+                    }
+                str+="\n"
+                }
+            }else if(flag==0){
+                for(var i=1;i<=h;i++){
+                    for(var k=1;k<=d;k++){
+                        if(i==1 ||i==h ||k==1 ||k==d){
+                            str+=z
+                        }else{
+                            str+=" "
+                        }
+                    }
+                str+="\n"
+                }
+            }
+            console.log(str)
+</script>
+<script type="XL" id="ch0105/43">
+            var n = Number(prompt());
+</script>
+
+<script type="XL" id="ch0105/44">
+            var n = Number(prompt());
+
+</script>
+
+<script type="XL" id="ch0105/45">
+            var n = Number(prompt());
+            var sum=0;
+            var cur=0;
+            for(var i=0;i<n;i++){
+                for(var k=0;k<i;k++){
+                    sum+=i
+                    cur++
+                    if(cur==n){
+                        break;
+                    }
+                }
+                if(cur==n){
+                    break;
+            }
+        }
+            console.log(sum)
 
 </script>
