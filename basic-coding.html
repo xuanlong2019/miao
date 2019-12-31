@@ -598,7 +598,7 @@
             var K = Number(prompt());
 
             var Sum=0;
-            var price=200/(1+k/100);
+            var price=200/(1+K/100);
             var Year=0;
             while(true){
                 Sum=Sum+N;
@@ -843,14 +843,20 @@
             var M = Number(prompt());
 
             var arr= new Array(N)
-            for(var i=1;i<=N;i++){
-                arr[i]=i
+            for(var i=0;i<N;i++){
+                arr[i]=i+1
             }
-            console.log(arr)
-            var arr1=arr;
-
             for(var k=0;k<M;k++){
-                if(arr[k]/M)
+                for(var i=0;i<N;i++){
+                    if((arr[i]%(k+1)) == 0){
+                    arr[i]=arr[i] * -1
+                    }
+                }
+            }
+            for(var i=0;i<N;i++){
+                if(arr[i]<0){
+                    console.log(-1*arr[i])
+                }
             }
 
 </script>
@@ -877,4 +883,26 @@
                 sum =sum+1/i*Math.pow(-1,i-1);
             }
             console.log(sum.toFixed(4))
+</script>
+
+<script type="XL" id="ch0105/34">
+            var N = Number(prompt());
+            var bigSum=0
+            var sum=1;
+            for(var i=1;i<=N;i++){
+                sum=i*sum
+                bigSum= bigSum+sum
+            }
+            console.log(bigSum)
+</script>
+<script type="XL" id="ch0105/35">
+            var N = Number(prompt());
+            var bigSum=0
+            var sum=1;
+            for(var i=1;i<=N;i++){
+                sum=i*sum
+
+                bigSum= bigSum+1/sum
+            }
+            console.log((1+bigSum).toFixed(10))
 </script>
