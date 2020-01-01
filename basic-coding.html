@@ -227,7 +227,7 @@
                 console.log("3 5")
             }else if(n%3!=0 && n%5==0 &&n%7==0){
                 console.log("5 7")
-            }else if(n%3==0 && n%5==0 &&n%7==0){
+            }else if(n%3==0 && n%5!=0 &&n%7==0){
                 console.log("3 7")
             }else if(n%3==0 && n%5==0 &&n%7!=0){
                 console.log("3")
@@ -1030,7 +1030,23 @@
 
 <script type="XL" id="ch0105/44">
             var n = Number(prompt());
-
+            var cur;
+            var a=0;
+            var arr= new Array();
+            for(var i =1;i<=1000;i++){
+                cur=1;
+                for(var k=2 ;k<i;k++){
+                    if((i%k)==0){
+                        cur=0;
+                        break;
+                    }
+                }
+                if(cur==1){
+                    arr[a]=i
+                    a++
+                }
+            }
+            console.log(arr[n])
 </script>
 
 <script type="XL" id="ch0105/45">
