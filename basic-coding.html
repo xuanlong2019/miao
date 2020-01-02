@@ -1024,6 +1024,14 @@
 </script>
 <script type="XL" id="ch0105/43">
             var n = Number(prompt());
+            var sum=0;
+            for(var i=2;i<Math.sqrt(n);i++){
+                if(n%i==0){
+                   var a =i;
+
+                }
+            }
+            console.log(n/a)
 </script>
 
 <script type="XL" id="ch0105/44">
@@ -1064,5 +1072,153 @@
             }
         }
             console.log(sum)
+
+</script>
+
+<script type="XL" id="7">
+            var n = Number(prompt());
+            if(n%7==0||Math.floor(n%10)==7){
+                console.log("YES")
+            }else{
+                console.log("NO")
+            }
+
+</script>
+<script type="XL" id="sort">
+
+            var arr =new Array(3);
+            for(var i=0;i<3;i++){
+                var n = Number(prompt());
+                arr[i]=n
+            }
+
+            var temp;
+            for(var k=1;k<arr.length;k++){
+                for(var j=0;j<arr.length-k;j++){
+                    if(arr[j]>arr[j+1]){
+                        temp=arr[j];
+                        arr[j]=arr[j+1]
+                        arr[j+1]=temp;
+                    }
+                }
+            }
+            for(var i=0;i<3;i++){
+                console.log(arr[i])
+            }
+</script>
+<script type="XL" id="narcissistic">
+            var n = Number(prompt());
+            var G=n%10;
+            var S=Math.floor(n/10%10)
+            var B=Math.floor(n/100)
+            if(n==B*B*B+S*S*S+G*G*G){
+                console.log("YES")
+            }else{
+                console.log("NO")
+            }
+
+</script>
+<script type="XL" id="narcissistics">
+            var arr=new Array();
+            var a=0;
+            for(i=100;i<1000;i++){
+                var G=i%10;
+                var S=Math.floor(i/10%10)
+                var B=Math.floor(i/100)
+                if(i==B*B*B+S*S*S+G*G*G){
+                    arr[a]=i;
+                    a++
+                }
+            }
+            for(var j=0;j<arr.length;j++){
+                console.log(arr[j])
+            }
+</script>
+<script type="XL" id="palindrom">
+            var n = Number(prompt());
+            var temp=n;
+            var sum=0;
+            var cur;
+            while(n>=1){
+                cur=n%10;
+                sum=Math.floor(cur+sum*10)
+                n=(n/10)
+            }
+
+            if(temp==sum){
+                console.log("YES")
+            }else{
+                console.log("NO")
+            }
+
+</script>
+
+<script type="XL" id="weekday">
+
+
+
+</script>
+<script type="XL" id="complete-number">
+
+
+</script>
+<script type="XL" id="complete-numbers">
+
+
+</script>
+<script type="XL" id="prime">
+            var n = Number(prompt());
+            var flag=1;
+            for(var i=2;i<n;i++){
+                if(n%i==0){
+                    flag=0;
+                    break;
+                }
+            }
+            if(flag==0 ||n==1){
+                console.log("NO")
+            }else{
+                console.log("YES")
+            }
+
+
+
+</script>
+<script type="XL" id="primes">
+            var n = Number(prompt());
+            var cur;
+            var a=0;
+            var arr= new Array();
+            for(var i =2;i<=100;i++){
+                cur=1;
+                for(var k=2 ;k<i;k++){
+                    if((i%k)==0){
+                        cur=0;
+                        break;
+                    }
+                }
+                if(cur==1){
+                    arr[a]=i
+                    a++
+                }
+            }
+            for(var j=0;j<arr.length;j++){
+                console.log(arr[j])
+            }
+
+
+</script>
+<script type="XL" id="itob">
+            var n = Number(prompt());
+            var a=n+""
+            console.log(a)
+
+</script>
+<script type="XL" id="lcf&lcm">
+
+
+</script>
+<script type="XL" id="sqrt">
+
 
 </script>
