@@ -669,7 +669,6 @@
 
 <script type="XL" id="ch0105/20">
             var m = Number(prompt());
-
             function foo(n){
                 if(n== 0) return m;
                 return foo(n-1)*0.5;
@@ -680,9 +679,6 @@
             }
             console.log(sum(9).toFixed(4));
             console.log(foo(10).toFixed(7));
-
-
-
 </script>
 <script type="XL" id="ch0105/21">
             var N = Number(prompt());
@@ -785,7 +781,7 @@
 <script type="XL" id="ch0105/27">
             var k = Number(prompt());
             var s=0;
-            for(var n=1;s<=k;n++){
+            for(var n=1;s<k;n++){
                 s=s+1/n
             }
             console.log(n);
@@ -843,7 +839,8 @@
 <script type="XL" id="ch0105/31">
             var N = Number(prompt());
             var M = Number(prompt());
-
+            var arr1 = new Array();
+            var q=0;
             var arr= new Array(N)
             for(var i=0;i<N;i++){
                 arr[i]=i+1
@@ -855,8 +852,6 @@
                     }
                 }
             }
-            var arr1 = new Array();
-            var q=0;
             for(var i=0;i<N;i++){
                 if(arr[i]<0){
                     arr1[q]=arr[i] * -1
@@ -989,8 +984,11 @@
             var sum=0;
             for(var i=L;i<=R;i++){
                for(var k=i;k>0;k=k/100){
-                  if(k%10==1){
+                  if(k%10==2){
                     sum++
+                  }
+                  if(Math.floor(k/10)==2){
+                      sum++
                   }
                }
             }
