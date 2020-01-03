@@ -1249,11 +1249,13 @@
             function foo(n,m){
                 if(n%m==0){
                     return m;
-                    return foo(m,n%m);
+
                 }
+                return foo(m,n%m);
             }
-            console.log(foo(n,m))
+
             console.log(n*m/foo(n,m))
+            console.log(foo(n,m))
 
 
 </script>
