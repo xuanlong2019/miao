@@ -1159,10 +1159,39 @@
 
 </script>
 <script type="XL" id="complete-number">
+            var n = Number(prompt());
+            var cur=0;
+            for(var i =n;i<=n;i++){
+                for(var k=1 ;k<i;k++){
+                    if((i%k)==0){
+                        cur=cur+k
 
+                    }
+                }
+                if(i==cur){
+                    console.log("YES")
+                }else{
+                    console.log("NO")
+                }
+                cur=0;
+            }
 
 </script>
 <script type="XL" id="complete-numbers">
+
+            var cur=0;
+            for(var i =1;i<=500;i++){
+                for(var k=1 ;k<i;k++){
+                    if((i%k)==0){
+                        cur=cur+k
+
+                    }
+                }
+                if(i==cur){
+                    console.log(cur)
+                }
+                cur=0;
+            }
 
 
 </script>
@@ -1215,10 +1244,20 @@
 
 </script>
 <script type="XL" id="lcf&lcm">
+            var n = Number(prompt());
+            var m = Number(prompt());
+            function foo(n,m){
+                if(n%m==0){
+                    return m;
+                    return foo(m,n%m);
+                }
+            }
+            console.log(foo(n,m))
+            console.log(n*m/foo(n,m))
 
 
 </script>
 <script type="XL" id="sqrt">
-
-
+            var n = Number(prompt());
+            console.log(Math.sqrt(n).toFixed(3))
 </script>
