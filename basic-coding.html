@@ -761,6 +761,9 @@
 </script>
 
 <script type="XL" id="ch0105/25">
+    for(var i=0;i<=999;i++){
+
+    }
         console.log("?")
 </script>
 <script type="XL" id="ch0105/26">
@@ -939,15 +942,25 @@
             console.log(Z)
 </script>
 <script type="XL" id="ch0105/38">
-            var x = Number(prompt());
             var n = Number(prompt());
-            var nub=0
-            var sum=0;
-            for(var i=0;i<=n;i++){
-                nub=Math.pow(x,i)
-                sum=sum+nub
+            for(var i=0;i<n;i++){
+                var a = Number(prompt());
+                var cur=a;
+                if(a==0){
+                    var c = Number(prompt());
+                    console.log(0)
+                }else{
+                    for(var j=0;j<=a;j++){
+                    var b = Number(prompt());
+                    var r=b*cur
+                    cur--
+                    if(cur!=-1){
+                        console.log(r)
+                    }
+                    }
+                }
             }
-            console.log(sum.toFixed(2))
+
 </script>
 <script type="XL" id="ch0105/39">
 
@@ -1040,19 +1053,31 @@
             var a=0;
             var arr= new Array();
             for(var i =1;i<=1000;i++){
-                cur=1;
+                cur=true;
                 for(var k=2 ;k<i;k++){
                     if((i%k)==0){
-                        cur=0;
+                        cur=false;
                         break;
                     }
                 }
-                if(cur==1){
+                if(cur==true){
                     arr[a]=i
                     a++
                 }
             }
             console.log(arr[n])
+
+    <!-- let count=0;
+    var arr=new Array()
+    for(let i=2;i<n;i++){
+        if(!arr[i-1]){
+            count++
+        }
+        for(let j=i*i ;j<=n;j+=i){
+            arr[j-1]=true
+        }
+    }
+    return count  -->
 </script>
 
 <script type="XL" id="ch0105/45">
@@ -1154,27 +1179,79 @@
 </script>
 
 <script type="XL" id="weekday">
+    var Y = Number(prompt());
+    var M = Number(prompt());
+    var a=weekday(Y,M);
+    console.log(a)
 
 
 
+function isLeapYear(year) {
+  if (year % 400 == 0) {
+    return true
+  }
+  if (year % 100 == 0) {
+    return false
+  }
+  if (year % 4 == 0) {
+    return true
+  }
+  return false
+}
+
+function weekday(year, month) {
+  var sum = 0
+  var y = year - 1
+
+  sum = y * 365 + Math.floor(y / 4) - Math.floor(y / 100) + Math.floor(y / 400)
+
+  for(var m = 1; m < month; m++) {
+    sum += getDayOfMonth(m, year)
+  }
+
+  return (sum + 1) % 7
+}
+
+function getDayOfMonth(m, y) {
+  if (m == 2) {
+    if (isLeapYear(y)) {
+      return 29
+    } else {
+      return 28
+    }
+  } else {
+    switch(m) {
+      case 1:
+      case 3:
+      case 5:
+      case 7:
+      case 8:
+      case 10:
+      case 12: return 31
+    }
+    return 30
+  }
+}
 </script>
 <script type="XL" id="complete-number">
+
             var n = Number(prompt());
             var cur=0;
-            for(var i =n;i<=n;i++){
-                for(var k=1 ;k<i;k++){
-                    if((i%k)==0){
+            for(var k=1 ;k<n;k++){
+                    if((n%k)==0){
                         cur=cur+k
 
                     }
-                }
-                if(i==cur){
-                    console.log("YES")
-                }else{
-                    console.log("NO")
-                }
-                cur=0;
             }
+            if(n==cur){
+                console.log("YES")
+            }else{
+                console.log("NO")
+            }
+            cur=0;
+
+
+
 
 </script>
 <script type="XL" id="complete-numbers">
@@ -1260,6 +1337,387 @@
 
 </script>
 <script type="XL" id="sqrt">
+
             var n = Number(prompt());
-            console.log(Math.sqrt(n).toFixed(3))
+            var r=n;
+            for(let i=0;i<10;i++){
+                r=(r*r+n)/r/2
+            }
+            console.log(r.toFixed(3))
+
+</script>
+<script type="XL" id="转进制公式">
+
+function foo(num){
+    var str =""
+    digit = "0123456789abcdef";
+    var flag=true
+    if(num<0){
+        flag=false
+        num=num*-1
+    }
+    if(num==0){
+        return "" ;
+    }else{
+        str= foo(Math.floor(num/7))
+        if(flag==true){
+            return str+ digit.charAt(num%7);
+        }else{
+            return "-"+ str+ digit.charAt(num%7);
+        }
+    }
+}
+var convertToBase7 = function(num) {
+    var temp=num
+    if(temp==0){
+        return "0"
+    }else return foo(num)
+};
+console.log(convertToBase7(-100))
+</script>
+<script type="XL" id="归并排序">
+function mergeSort(arr) {
+  if (arr.length < 2) {
+    return arr
+  }
+  var mid = arr.length/2
+  var left = arr.slice(0, mid)
+  var right = arr.slice(mid)
+  mergeSort(left)
+  mergeSort(right)
+  var i = 0
+  var j = 0
+  var k = 0
+  while(i < left.length && j < right.length) {
+    if (left[i] < right[j]) {
+      arr[k++] = left[i++]
+    } else {
+      arr[k++] = right[j++]
+    }
+  }
+  while (i < left.length) {
+    arr[k++] = left[i++]
+  }
+  while (j < right.length) {
+    arr[k++] = right[j++]
+  }
+  return arr
+}
+</script>
+
+<script type="XL" id="快速排序">
+
+function quickSort(arr, start = 0, end = arr.length - 1) {
+
+    if (end - start <= 0) { return arr }
+    var pivotIndex = start + Math.random() * (end - start + 1) | 0
+    var pivotNumber = arr[pivotIndex]
+    swap(arr, pivotIndex, end)
+    var i = start, j = start
+    for (; j < end; j++) {
+        if (arr[j] < pivotNumber) {
+            swap(arr, i, j)
+            i++
+        }
+    }
+    swap(arr, i, end)
+    quickSort(arr, start, i - 1)
+    quickSort(arr, i + 1, end)
+    return arr
+    }
+function swap(array, i, j) {
+    if (i != j) {
+        var temp = array[i]
+        array[i] = array[j]
+        array[j] = temp
+    }
+    return array
+}
+
+</script>
+
+<script type="XL" id="xxxx">
+    function foo(x,n){
+        if(n==0) return 1;
+        if(n==1) return x;
+        if(n==-1) return 1/x
+        var half=myPow(x,n/2)
+        var rest=myPow(x,n%2)
+        return half*half*rest
+    }
+    var c =0
+    var z =x^y
+    while (z){
+        var d=z%2
+        if(d){
+            c++
+        }
+        z>>=1
+    }
+
+ var fizzBuzz = function(n) {
+    var arr=new Array(n);
+    for(let i=1;i<=n;i++){
+        if(i%3==0){
+            arr[i-1]="Fizz"
+            if(i%5==0){
+                arr[i-1]="FizzBuzz"
+            }
+        }else if(i%5==0){
+            arr[i-1]="Buzz"
+        }else{
+            arr[i-1]=i+ ""
+        }
+    }
+    return arr
+};
+    var nums=[1,0,56,0,74,86]
+    for(let i=nums.length-1;i>=0;i--){
+        for(let j=0;j<i;j++){
+            if(nums[j]=="0"){
+                var temp=nums[j]
+                nums[j]=nums[j+1]
+                nums[j+1]=temp;
+            }
+        }
+    }
+     console.log(nums)
+nums=[1,0,1]
+for(var i=0;i<nums.length;i++){
+        for(var j=i+1;j<nums.length;j++){
+            if(nums[i]===nums[j]){
+                nums[i]=false
+                nums[j]=false
+                break
+            }
+        }
+    }
+    console.log(nums)
+
+        for(var i=0;i<nums.length;i++){
+            if(nums[i]!=false){
+                return nums[i]
+            }
+        }
+
+arr=[1,1,2]
+for(var i=0;i<arr.length;i++){
+        for(var k=0;k<arr.length;k++){
+            if(arr[k]==arr[k+1]){
+                arr.splice(k,1)
+            }
+        }
+    }
+   console.log(arr)
+
+function foo(n){
+    var sum=0;
+    while(n){
+        a=n%2
+        if(a){
+            sum++
+        }
+        n=(n-a)/2
+    }
+    return sum
+}
+
+foo(10)
+
+
+var arr=[]
+for(var i=0;i<n;i++){
+    arr[i]=new Array(i+1)
+}
+
+for(var i=0;i<arr.length;i++){
+    arr[i][0]=1
+    arr[i][i]=1
+    for(var k=1;k<arr[i].length-1;k++){
+        arr[i][k]=arr[i-1][k-1]+arr[i-1][k]
+    }
+}
+console.log(arr)
+
+
+            var arr =new Array(10);
+            for(var i=0;i<arr.length;i++){
+                arr[i]=arr.length-i
+            }
+
+            var temp;
+            for(var k=1;k<arr.length;k++){
+                for(var j=0;j<arr.length-k;j++){
+                    if(arr[j]>arr[j+1]){
+                        temp=arr[j];
+                        arr[j]=arr[j+1]
+                        arr[j+1]=temp;
+                    }
+                }
+            }
+
+        for(var k=0;k<arr.length;k++){
+            for(var j=0;j<.length-k;j++){
+                if(A[j]>A[A+1]){
+                    var temp=A[j]
+                    A[j]=A[j+1]
+                    A[j+1]=temp
+                }
+            }
+        }
+
+                console.log(arr)
+
+
+
+    var reverse = function(x) {
+        var max = Math.pow(2, 31) - 1;
+        var min = -Math.pow(2, 31);
+        var y = 0;
+        while(x !== 0) {
+            y = 10 * y + x % 10;
+            x = ~~(x/10);
+        }
+        if (y > max) return 0;
+        if (y < min) return 0;
+        return y;
+    };
+
+
+        for(var i=0,j=0;i<arr.length/2,j<arr.length/2;i++,j++){
+        if(arr[i]%2!=0 && arr[j]%2==0){
+            var temp=arr[i]
+            arr[i]=arr[j]
+            arr[j]=temp
+        }else if(arr[i]%2==0 && arr[j]%2==0){
+            j--
+        }else if(arr[i]%2!=0 && arr[j]%2 !=0){
+            i--
+        }
+    }
+    return arr
+
+    var plusOne = function(digits) {
+    var n=1
+   if((digits[digits.length-n])==9){
+       digits.unshift(1)
+       var a=digits.length-1
+       n--
+        while((digits[a-n])==9){
+            digits[a-n]=0
+            n++
+        }
+    }else{
+        digits[digits.length-n]++
+    }
+    return digits
+};
+
+
+function foo(){
+    for(var k=1;k<arr.length;k++){
+        for(var j=0;j<arr.length-k;j++){
+            if(arr[j]>arr[j+1]){
+                temp=arr[j];
+                arr[j]=arr[j+1]
+                arr[j+1]=temp;
+            }
+        }
+    }
+}
+
+var detectCapitalUse = function(word) {
+    var zero=word[0].charCodeAt()
+    var one=word[1].charCodeAt()
+    if(zero<=90 && zero>=65&& one<=90 && one>=65){
+        for(var i=2;i<word.length;i++){
+            if(word[i].charCodeAt()>90 || word[i].charCodeAt()<65){
+                   return false
+               }
+        }
+    }
+    if((zero<=90 && zero>=65)&& one<=122 && one>=97){
+        for(var i=2;i<word.length;i++){
+            if(word[i].charCodeAt()>122 || word[i].charCodeAt()<97){
+                   return false
+            }
+        }
+    }
+    if((zero<=122 && zero>=97)){
+        for(var i=1;i<word.length;i++){
+            if(word[i].charCodeAt()>122 || word[i].charCodeAt()<97){
+                   return false
+            }
+        }
+    }
+    return true
+};
+
+var addStrings = function(num1, num2) {
+    var arr=[]
+    var flag=false
+    var flagZ=false
+    if(num1.length>num2.length){
+        for(var i=num1.length-1,j=num2.length-1;i>=0;i--,j--){
+            if(flag){
+                arr.unshift(((Number(num1[i]) || 0 )+(Number(num2[j]) || 0  )+1)%10)
+                flag=false
+                    if((Number(num1[i]) || 0 )+(Number(num2[j]) || 0  )+flagZ>=10){
+                        flag=true
+                        flagZ=true
+                        if(i-1==-1){
+                            arr.unshift(1)
+                        }
+                    }else{
+                        flagZ=false
+                    }
+            }else{
+                arr.unshift(((Number(num1[i]) || 0 )+(Number(num2[j]) || 0  ))%10)
+                if((Number(num1[i]) || 0 )+(Number(num2[j]) || 0  )+flagZ>=10){
+                    flag=true
+                    flagZ=true
+                    if(i-1==-1){
+                            arr.unshift(1)
+                        }
+                }else{
+                    flagZ=false
+                }
+            }
+        }
+    }else{
+        for(var i=num1.length-1,j=num2.length-1;j>=0;i--,j--){
+            if(flag){
+                arr.unshift(((Number(num1[i]) || 0 )+(Number(num2[j]) || 0  )+1)%10)
+                flag=false
+                    if((Number(num1[i]) || 0 )+(Number(num2[j]) || 0  )+flagZ>=10){
+                        flag=true
+                        flagZ=true
+                        if(j-1==-1){
+                            arr.unshift(1)
+                        }
+                    }else{
+                        flagZ=false
+                    }
+            }else{
+                arr.unshift(((Number(num1[i]) || 0 )+(Number(num2[j]) || 0  ))%10)
+                if((Number(num1[i]) || 0 )+(Number(num2[j]) || 0  )+flagZ>=10){
+                    flag=true
+                    flagZ=true
+                    if(j-1==-1){
+                            arr.unshift(1)
+                        }
+                }else{
+                    flagZ=false
+                }
+            }
+        }
+    }
+    return arr.join("")
+};
+
+
+
+
+
+
 </script>

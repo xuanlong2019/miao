@@ -44,26 +44,33 @@
 </script>
 <script>
   // YOUR CODE GOES BELOW
+
   for (var i = 0; i < 400; i++) {
-    dot(i, 3 / 4 * i, color = 'black')
+    dot(i, 80, color = 'black')
   }
 
   for (var i = 0; i < 400; i += 2) {
     dot(i, 20, color = 'black')
   }
-  for (var i = 0; i < 400; i += 3) {
-    dot(i, 40, color = 'black')
-  }
   for (var i = 0; i < 400; i += 4) {
+    dot(i, 40, color = 'black')
+    dot(i + 1, 40, color = 'black')
+  }
+  for (var i = 0; i < 400; i += 5) {
     dot(i, 60, color = 'black')
+    dot(i + 1, 60, color = 'black')
+    dot(i + 2, 60, color = 'black')
   }
 
-  for (var i = 0; i < 400; i++) {
-    dot(i, 80, color = 'black')
-  }
+
   for (var i = 0; i < 400; i++) {
     dot(i, 300 - i, color = 'black')
   }
+
+  for (var i = 0; i < 400; i++) {
+    dot(i, 3 / 4 * i, color = 'black')
+  }
+
   for (var i = 250; i < 350; i++) {
     for (var k = 100; k < 200; k++) {
       dot(i, k, color = 'blue')
@@ -72,19 +79,36 @@
   for (var i = 50; i <= 250; i++) {
     for (var k = 200; k <= 250; k++) {
       if (i == 50 || i == 250 || k == 200 || k == 250) {
-        dot(i, k, color = 'blue')
+        dot(i, k, color = 'red')
       }
     }
   }
-  var a = Math.sin(i)
-  var b = Math.cos(i)
-  for (var i = 0; i < 400; i++) {
-
+  for (var r = 0; r <= 256; r++) {
+    for (var b = 0; b <= 256; b++) {
+      dot(r / 5 + 310, b / 5 + 220, 'rgb(' + r + ', 255,' + b + ')')
+    }
   }
 
 
+  for (var i = 0; i <= 2 * Math.PI; i += 0.03) {
+    var a = Math.sin(2 * i) * 30
+    var b = Math.cos(2 * i) * 30
+    dot(120 + a, 80 + b)
+  }
 
 
+  for (let i = 0; i <= 360; i++) {
+    for (let r = 0; r <= 10; r += .1) {
+      dot((Math.sin(i / 180) * Math.PI * r + 200), (Math.cos(i / 180) * Math.PI * r + 160), "orange")
+      dot((-Math.sin(i / 180) * Math.PI * r + 200), (Math.cos(i / 180) * Math.PI * r + 160), "green")
+      dot((Math.sin(i / 180) * Math.PI * r + 200), (-Math.cos(i / 180) * Math.PI * r + 160), "red")
+      dot((-Math.sin(i / 180) * Math.PI * r + 200), (-Math.cos(i / 180) * Math.PI * r + 160), "yellow")
+    }
+  }
+  for (var x = 0; x < 400; x++) {
+    var y = 20 * Math.sin(x / 20)
+    dot(x, y + 150)
+  }
 
 
 
